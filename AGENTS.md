@@ -167,3 +167,8 @@ Evidence: PR / tests / screenshots / logs
 ```
 
 **If the PRD, acceptance criteria, or security requirements conflict, stop and request a Product Owner decision. Never silently invent policy or report work as complete before verification.**
+
+
+## 12. Shared autonomous delivery protocol
+
+**Mandatory:** Read [AI_DELIVERY_PROTOCOL.md](AI_DELIVERY_PROTOCOL.md) before taking a ticket. It defines the GitHub Projects Kanban state transitions, Claude-to-Codex PR handoffs, board update commands, unattended execution prerequisites, escalation rules and approval gates. Pushing code does **not** complete a ticket. When unable to update the board, report `BOARD_UPDATE_REQUIRED` in the issue instead of claiming success.

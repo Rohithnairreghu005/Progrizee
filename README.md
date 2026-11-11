@@ -31,6 +31,9 @@ cp .env.example .env   # placeholders only; never commit .env
 pnpm dev               # runs every app in watch mode
 ```
 
+`pnpm dev` loads the root `.env` if it exists. Variables already exported in your shell take
+precedence over values in `.env`.
+
 Health check: `curl http://localhost:4000/health`.
 
 ## Checks

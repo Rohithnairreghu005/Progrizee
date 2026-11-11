@@ -8,6 +8,8 @@ The repository contains AGENTS.md and AI_DELIVERY_PROTOCOL.md only. Issues #1–
 
 ## Implemented boundary
 
+Authorization follow-up: the owner refreshed the CLI authorization successfully. Workflow branch publication and Project #2 field reads now succeed. The original project-access blocker above is resolved for this local session; hosted Actions still require a separately configured project credential. Verified Status options are Backlog, Ready, In progress, In review and Done. Map Code Review and Testing to In review with separate evidence; represent Blocked through a label and handoff rather than creating duplicate board options.
+
 AI readiness provides scheduled/manual/PR policy tests and a read-only issue report. It uses no model credentials and has zero model budget. Runs serialize and stop after five minutes. Checkout credentials are not persisted. Issue content is never executed or included in shell commands. Reports use issue numbers and fixed policy text to prevent Markdown injection. This workflow does not dispatch workers or change board statuses. Scheduling and manual dispatch require the workflow to reach the default branch through human review.
 
 ## Required before enabling workers

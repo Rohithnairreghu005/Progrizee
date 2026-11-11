@@ -1,0 +1,29 @@
+name: AI readiness
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+  pull_request:
+permissions:
+  contents: read
+  issues: read
+concurrency:
+  group: heard-ai-readiness
+  cancel-in-progress: false
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify coordination policy
+        run: node --test automation/*.test.mjs
+      - name: Report backlog readiness
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh issue list --state open --limit 100 --json number,title,labels,body > "$RUNNER_TEMP/issues.json"
+          node automation/readiness.mjs "$RUNNER_TEMP/issues.json" >> "$GITHUB_STEP_SUMMARY"

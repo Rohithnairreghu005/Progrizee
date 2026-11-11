@@ -19,7 +19,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Verify coordination policy
-        run: node --test automation/policy.test.mjs
+        run: node --test automation/*.test.mjs
       - name: Report backlog readiness
         env:
           GH_TOKEN: ${{ github.token }}

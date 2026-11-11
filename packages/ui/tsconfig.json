@@ -1,0 +1,10 @@
+{
+  "extends": "@heard/config/tsconfig/library.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2023"],
+    "jsx": "react-jsx",
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}

@@ -1,0 +1,8 @@
+node_modules
+dist
+.next
+coverage
+.turbo
+pnpm-lock.yaml
+AGENTS.md
+AI_DELIVERY_PROTOCOL.md

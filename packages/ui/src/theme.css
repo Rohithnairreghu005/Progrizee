@@ -1,0 +1,10 @@
+/*
+ * Shared Tailwind v4 theme tokens for Heard apps.
+ * Placeholder values until approved Figma designs are linked (issue #7).
+ */
+@theme {
+  --color-brand-600: oklch(0.5 0.15 260);
+  --color-brand-700: oklch(0.43 0.15 260);
+  --color-surface: oklch(0.99 0 0);
+  --color-ink: oklch(0.2 0 0);
+}

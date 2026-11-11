@@ -76,3 +76,9 @@ Stop and mark **Blocked** for missing PRD decisions, unapproved product policy, 
 ## Definition of Done
 
 Acceptance criteria met; tests run and CI green; independent review complete; security and tenancy checks passed; documentation updated; Product Owner approves; PR merged; GitHub Issue closed; board card moved to Done.
+
+## Proposed solo-owner policy — not yet active
+
+See [solo-owner delivery governance](docs/governance/solo-owner-delivery.md), proposed under #17. It specifies independent AI review and validation tied to the exact PR head, explicit Product Owner merge approval, passing required CI/secret scanning and a separate deployment decision. For Codex implementations, Claude is the independent reviewer; for Claude implementations, Codex is the independent reviewer. Neither agent may review its own implementation as independent evidence.
+
+The proposal distinguishes agent review evidence from GitHub account approvals and documents proposed steady-state protection settings. It does not change current dispatch, review, approval, merge or release rules. Existing live protections apply until the proposal's adoption and activation conditions are demonstrably met. Never remove protections temporarily, manufacture approvals/checks, or use an admin/direct-push path to complete a rejected merge.

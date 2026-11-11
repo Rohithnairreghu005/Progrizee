@@ -172,3 +172,9 @@ Evidence: PR / tests / screenshots / logs
 ## 12. Shared autonomous delivery protocol
 
 **Mandatory:** Read [AI_DELIVERY_PROTOCOL.md](AI_DELIVERY_PROTOCOL.md) before taking a ticket. It defines the GitHub Projects Kanban state transitions, Claude-to-Codex PR handoffs, board update commands, unattended execution prerequisites, escalation rules and approval gates. Pushing code does **not** complete a ticket. When unable to update the board, report `BOARD_UPDATE_REQUIRED` in the issue instead of claiming success.
+
+## 13. Proposed solo-owner delivery policy — not yet active
+
+Issue #17 proposes [solo-owner delivery governance](docs/governance/solo-owner-delivery.md): one AI workstream implements, the other independently reviews/tests the exact PR head, required CI and secret scanning pass, and the Product Owner explicitly approves that head before a normal merge. Deployment requires separate approval. Agent independence does not imply a separate GitHub account, and a review comment is not a formal GitHub approval.
+
+This is a proposal for independent review and Product Owner decision. Existing instructions and live GitHub protections continue to govern. Preparing or opening this proposal does not activate it, grant a protection bypass, or authorise a blocked merge. Follow the activation conditions and evidence requirements in the proposal before any workflow changes.

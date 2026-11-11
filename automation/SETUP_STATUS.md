@@ -25,3 +25,7 @@
 6. Integrate product CI from #15 after human review; readiness policy tests alone do not verify the application. Add secret scanning to every relevant PR and ensure required checks cannot be bypassed through an unrelated workflow with the same job name.
 
 This status supersedes historical audit observations in ACTIVATION.md. The repository has stronger controls and a tested readiness foundation, but full unattended development is not ready. Do not enable scheduling of paid work until the remaining execution and review controls are implemented and tested.
+
+## Independent review follow-up
+
+Review identified missing durable transition evidence and ambiguous dry-run input; both were corrected. Real transitions post intent before mutation and confirmation afterward; failure leaves a durable pending intent and attempts BOARD_UPDATE_REQUIRED. Confirmation-comment failure after a successful board mutation fails the job; inspect the board before retrying. Dry runs verify reads only, not write authorization. Eight policy tests pass locally. CI's required check is bound by GitHub to the Actions app (15368), but a PR can still modify workflow code or reuse a job name. Owner review of workflow changes remains essential; a trusted externally enforced required workflow is not yet configured or verified. Agent workflow modifications must remain approval-gated.

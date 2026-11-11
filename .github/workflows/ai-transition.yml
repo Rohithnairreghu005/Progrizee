@@ -16,12 +16,13 @@ on:
         required: true
         type: string
       dry_run:
-        description: Verify access and item lookup without changing board
+        description: Verify read access and item lookup; write access remains unverified
         required: true
         type: boolean
         default: true
 permissions:
   contents: read
+  issues: write
 concurrency:
   group: heard-ai-coordinator
   cancel-in-progress: false
@@ -38,6 +39,7 @@ jobs:
       - name: Validate and update board
         env:
           GH_TOKEN: ${{ secrets.HEARD_PROJECT_TOKEN }}
+          GH_ISSUE_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ inputs.issue }}
           TARGET_STATUS: ${{ inputs.target }}
           TRANSITION_EVIDENCE: ${{ inputs.evidence }}

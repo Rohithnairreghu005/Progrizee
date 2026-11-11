@@ -1,0 +1,23 @@
+{
+  "name": "@heard/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/library.json": "./tsconfig/library.json",
+    "./tsconfig/nextjs.json": "./tsconfig/nextjs.json",
+    "./eslint/base": "./eslint/base.js",
+    "./eslint/next": "./eslint/next.js"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  },
+  "dependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "typescript-eslint": "8.72.2"
+  }
+}

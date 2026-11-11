@@ -19,7 +19,8 @@ boundaries, with no auth, schema, product UI or policy in the scaffold.
 - **ESLint 9 flat config.** ESLint 10 is available, but `eslint-config-next`'s plugin set is not yet
   verified against it.
 - **Vitest** in every workspace. The API uses `unplugin-swc` so tests keep the decorator metadata
-  NestJS dependency injection needs. `pnpm dev` for the API uses the Nest CLI for the same reason.
+  NestJS dependency injection needs. `pnpm dev` for the API uses the Nest CLI for the same reason;
+  the worker (no decorators) uses `tsx watch` so source edits restart it.
 - **Shared packages compile to CommonJS in `dist/`** and Turbo builds them before dependents
   (`^build`). This works for both the NestJS API (CommonJS) and the Next.js bundler.
 - **Tailwind CSS v4.** `@heard/ui` ships `theme.css` tokens; apps import it and add the UI source via
